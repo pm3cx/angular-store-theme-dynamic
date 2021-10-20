@@ -1,8 +1,14 @@
-<h1>A sample angular theme</h1>
+<div class="container mt-3">
+  <div class="row">
+     <div class="col-6 offset-3">
+      <h1>A sample angular theme</h1>
 
-<p>Current Theme: {{ theme$ | async }}</p>
-
-<select (ngModelChange)="onChange($event)" [ngModel]="theme$ | async">
-  <option value="light-theme">Light Theme</option>
-  <option value="dark-theme">Dark Theme</option>
-</select>
+      <p>Current Theme: {{ theme$ | async }}</p>
+  
+      <select class="form-select"  (ngModelChange)="onChange($event)" [ngModel]="theme$ | async">
+        <option value="light-theme">Light Theme</option>
+        <option value="dark-theme">Dark Theme</option>
+      </select>
+     </div>
+  </div>
+</div>
