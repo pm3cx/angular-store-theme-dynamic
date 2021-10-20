@@ -1,0 +1,15 @@
+
+@import  '../variables//variables';
+
+// Light Theme
+$light-theme: (
+    "dark-color" :$black-color,
+    "white-color": $white-color
+);
+
+
+// Backnground Theme
+$dark-theme: (
+    "white-color" :$white-color,
+    "dark-color": $black-color
+);

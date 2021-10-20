@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { AppState } from './store/app.state';
+import { environment } from '../environments/environment';
+
+// More info for NGXS store: https://www.ngxs.io/concepts/store
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    NgxsModule.forRoot([AppState], {
+      developmentMode: !environment.production,
+    }), // initial ngxs module and create the state of app
+    NgxsStoragePluginModule.forRoot(), // ngxs store plugin offers init state in localstore, we can set custom keys and options inside forRoor()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
