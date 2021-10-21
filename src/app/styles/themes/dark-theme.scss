@@ -1,21 +1,8 @@
 
-@use "sass:map";
-@import './theme';
+$body-bg:                   #000;
+$body-color:                #fff;
+$primary:  red;
 
-body {
-    color: map.get($dark-theme, "white-color");
-    background: map.get($dark-theme, "dark-color")
-  }
-  
-  h1,
-  p {
-    color:  map.get($dark-theme, "white-color")
-  }
+@import '../bootstrap/bootstrap';
 
-  .form-select {
-    background-color: map.get($dark-theme, "dark-color");
-    color: map.get($dark-theme, "white-color");
-  }
-  
 
-  
