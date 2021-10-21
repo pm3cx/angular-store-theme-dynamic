@@ -29,8 +29,6 @@ export class AppComponent implements OnInit {
 
   private init(theme: string) {
     const head = this.document.getElementsByTagName('head')[0];
-    const path = '../src/app/themes/';
-
     let themeLink = this.document.getElementById('theme') as HTMLLinkElement;
     if (themeLink) {
       themeLink.href = theme + '.css';
