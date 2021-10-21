@@ -1,14 +1,23 @@
-<div class="container">
-  <div class="row">
-     <div class="col-6 offset-3">
-      <h1>A sample angular theme</h1>
-
-      <p>Current Theme: {{ theme$ | async }}</p>
-  
-      <select class="form-select"  (ngModelChange)="onChange($event)" [ngModel]="theme$ | async">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Angular Bootstrap Theme</span>
+    <form class="d-flex">
+      <select class="form-select" (ngModelChange)="onChange($event)" [ngModel]="theme$ | async" [ngModelOptions]="{standalone: true}">
         <option value="light-theme">Light Theme</option>
         <option value="dark-theme">Dark Theme</option>
       </select>
-     </div>
+    </form>
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>h1. Bootstrap heading</h1>
+      <h2>h2. Bootstrap heading</h2>
+      <h3>h3. Bootstrap heading</h3>
+      <h4>h4. Bootstrap heading</h4>
+      <h5>h5. Bootstrap heading</h5>
+      <h6>h6. Bootstrap heading</h6>
+    </div>
   </div>
 </div>

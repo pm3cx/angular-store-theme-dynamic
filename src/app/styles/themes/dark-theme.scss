@@ -1,8 +1,12 @@
-$body-bg:                   #000;
-$body-color:                #fff;
-$primary:  red;
+// Your Variables Goes Here
+$body-bg:                   #7f8c8d;
+$body-color:                #ecf0f1;
 
+@import "~bootstrap/scss/bootstrap.scss";
 
-@import '../bootstrap/required';
-
+// Global Stylesheet
+body {
+    opacity: 1;
+    transition: opacity .5s;
+}
 

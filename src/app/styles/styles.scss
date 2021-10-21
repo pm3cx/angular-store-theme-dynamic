@@ -1,3 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Add application styles & imports to this file! */
-@import './bootstrap/bootstrap';
+
+// Set opacity to 0 and set it back to 1 using transition inside the them to avoid flicking the screen.
+body {
+    opacity: 0;
+}
