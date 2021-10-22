@@ -13,6 +13,7 @@ export interface AppStateModel {
     theme: 'light-theme', // we set a default theme
   },
 })
+
 @Injectable()
 export class AppState {
   // selector for the theme state

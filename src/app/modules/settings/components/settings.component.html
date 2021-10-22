@@ -1,0 +1,9 @@
+
+<h1>Hi from settings module</h1>
+
+<form class="d-flex">
+    <select class="form-select" (ngModelChange)="onChange($event)" [ngModel]="theme$ | async" [ngModelOptions]="{standalone: true}">
+      <option value="light-theme">Light Theme</option>
+      <option value="dark-theme">Dark Theme</option>
+    </select>
+  </form>

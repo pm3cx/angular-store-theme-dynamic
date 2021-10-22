@@ -1,0 +1,27 @@
+.fixed-left {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.width {
+    width: 50px
+}
+
+li {
+    display: block;
+    position: relative;
+
+    a {
+        font-weight: normal;
+        text-transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: background-color 0.2s ease-in-out 0s;
+        padding: 1rem;
+    }
+}

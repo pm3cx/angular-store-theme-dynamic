@@ -2,6 +2,17 @@
 /* Add application styles & imports to this file! */
 
 // Set opacity to 0 and set it back to 1 using transition inside the them to avoid flicking the screen.
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
+
 body {
     opacity: 0;
+}
+
+.fixed-right {
+    position: fixed;
+    top: 62px; // 50px for nav and 12 px for paddings
+    right: 0;
+    left: 50px;
+    z-index: 1;
 }
