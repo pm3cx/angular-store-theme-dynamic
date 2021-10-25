@@ -3,6 +3,7 @@ import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { AppState } from './core/store/app.state';
 import { HeadService } from './core/services/head.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app',
@@ -12,7 +13,7 @@ import { HeadService } from './core/services/head.service';
 export class AppComponent implements AfterViewInit  {
   @Select(AppState.theme) theme$: Observable<string>; // select the theme selector that w've create on the app.state.ts
 
-  constructor(private head: HeadService) {}
+  constructor(private head: HeadService, private titleService: Title) {}
 
   ngAfterViewInit(): void {
     this.theme$.subscribe((res) =>  this.head.addStyleReference({ id: 'theme', href: res + '.css'}));

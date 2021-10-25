@@ -14,7 +14,9 @@ import { AppComponent } from './app.component';
     NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production, // NGSX Store: https://www.ngxs.io/concepts/store
     }), // initial ngxs module and create the state of app
-    NgxsStoragePluginModule.forRoot(), // ngxs store plugin offers init state in localstore, we can set custom keys and options inside forRoor()
+    NgxsStoragePluginModule.forRoot({
+      key: ['app', AppState]
+    }), // ngxs store plugin offers init state in localstore, we can set custom keys and options inside forRoor()
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

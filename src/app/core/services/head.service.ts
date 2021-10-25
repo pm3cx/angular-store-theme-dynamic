@@ -1,11 +1,38 @@
-import { Renderer2, RendererFactory2 } from "@angular/core";
+import { Injector } from "@angular/core";
+import { Title } from "@angular/platform-browser";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { LinkDefinition } from "../interfaces/global.interface";
+import { filter, map } from 'rxjs/operators';
 
 export class HeadService {
     private _doc: Document;
+    private _injector: Injector;
 
-    constructor(document: Document) {
+    constructor(document: Document, injector: Injector) {
         this._doc = document;
+        this._injector = injector;
+    }
+
+
+    private addTitle() {
+        const title = this._injector.get(Title)
+        const router = this._injector.get(Router);
+        const activeRoute = this._injector.get(ActivatedRoute)
+        router.events.pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(() => {
+                let child = activeRoute.firstChild;
+                while (child?.firstChild) {
+                    child = child.firstChild;
+                }
+                if (child?.snapshot.data['title']) {
+                    return child.snapshot.data['title'];
+                }
+                return title.getTitle();
+            })
+        ).subscribe((ttl: string) => {
+            title.setTitle(ttl);
+        })
     }
 
     addStyleReference(link: LinkDefinition): void {
@@ -33,6 +60,6 @@ export class HeadService {
     }
 }
 
-export const HeadFactoryService = (doc: Document) => {
-    return new HeadService(doc)
+export const HeadFactoryService = (doc: Document, injector: Injector) => {
+    return new HeadService(doc, injector)
 }

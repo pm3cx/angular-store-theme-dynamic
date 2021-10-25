@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
+
 import { AppState, HeadService, ThemeState } from '../../../../app/core';
 
 @Component({
@@ -18,6 +19,5 @@ export class SettingsComponent implements OnInit {
 
   onChange(event: string): void {
     this.store.dispatch(new ThemeState(event)); // dispatch the new theme from dropdown
-    this.head.addStyleReference({ id: 'theme', href: event + '.css'}); // create and append the stylesheet refactor code
   }
 }

@@ -18,3 +18,8 @@ export interface IConfiguration {
     declarations?: Array<Type<any> | any[]>;
     imports?: Array<Type<any> | ModuleWithProviders<any> | any[]>;
 }
+
+export interface IApplication {
+    theme: string;
+    language: string;
+}
